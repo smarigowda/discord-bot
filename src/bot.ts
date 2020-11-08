@@ -1,6 +1,6 @@
 import { Client, Message } from "discord.js";
 import { inject, injectable } from "inversify";
-import { MessageResponder } from "./services/message-responder";
+import { IMessageResponder } from "./interfaces";
 import { TYPES } from "./types";
 
 
@@ -8,12 +8,12 @@ import { TYPES } from "./types";
 export class Bot {
   private client: Client;
   private readonly token: string;
-  private messageResponder: MessageResponder;
+  private messageResponder: IMessageResponder;
 
   constructor(
     @inject(TYPES.Client) client: Client,
     @inject(TYPES.Token) token: string,
-    @inject(TYPES.MessageResponder) messageResponder: MessageResponder
+    @inject(TYPES.MessageResponder) messageResponder: IMessageResponder
   ) {
     this.client = client;
     this.token = token;
