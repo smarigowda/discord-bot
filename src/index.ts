@@ -1,10 +1,10 @@
 require("dotenv").config(); // recommended way of loading dotenv
 
 import container from "./inversify.config";
-import { Bot } from "./bot";
 import { TYPES } from "./types";
+import { IBot } from "./interfaces";
 
-let bot = container.get<Bot>(TYPES.Bot);
+let bot = container.get<IBot>(TYPES.Bot);
 
 bot
   .listen()
