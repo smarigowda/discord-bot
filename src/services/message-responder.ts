@@ -1,12 +1,12 @@
 import { Message } from "discord.js";
 import { inject, injectable } from "inversify";
 import { TYPES } from "../types";
-import { PingFinder } from "./ping-finder";
+import { IPingFinder } from '../interfaces';
 
 @injectable()
 export class MessageResponder {
-  private pingFinder: PingFinder;
-  constructor(@inject(TYPES.PingFinder) pingFinder: PingFinder) {
+  private pingFinder: IPingFinder;
+  constructor(@inject(TYPES.PingFinder) pingFinder: IPingFinder) {
     this.pingFinder = pingFinder;
   }
   handle(message: Message): Promise<Message | Message[]> {

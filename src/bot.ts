@@ -3,6 +3,7 @@ import { inject, injectable } from "inversify";
 import { MessageResponder } from "./services/message-responder";
 import { TYPES } from "./types";
 
+
 @injectable()
 export class Bot {
   private client: Client;

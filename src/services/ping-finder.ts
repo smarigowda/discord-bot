@@ -1,7 +1,8 @@
 import { injectable } from "inversify";
+import { IPingFinder } from '../interfaces'
 
 @injectable()
-export class PingFinder {
+export class PingFinder implements IPingFinder {
   private regexp = "ping";
 
   public isPing(stringToSearch: string): boolean {
