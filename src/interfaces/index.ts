@@ -5,5 +5,9 @@ export interface IPingFinder {
 }
 
 export interface IMessageResponder {
-    handle(message: Message): Promise<Message | Message[]>
+  handle(message: Message): Promise<Message | Message[]>;
+}
+
+export interface IBot {
+  listen(): Promise<string>;
 }

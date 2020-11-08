@@ -1,11 +1,11 @@
 import { Client, Message } from "discord.js";
 import { inject, injectable } from "inversify";
-import { IMessageResponder } from "./interfaces";
+import { IBot, IMessageResponder } from "./interfaces";
 import { TYPES } from "./types";
 
 
 @injectable()
-export class Bot {
+export class Bot implements IBot{
   private client: Client;
   private readonly token: string;
   private messageResponder: IMessageResponder;

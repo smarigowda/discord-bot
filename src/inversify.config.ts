@@ -6,11 +6,11 @@ import { Bot } from "./bot";
 import { TYPES } from "./types";
 import { PingFinder } from "./services/ping-finder";
 import { MessageResponder } from "./services/message-responder";
-import { IMessageResponder, IPingFinder } from "./interfaces";
+import { IBot, IMessageResponder, IPingFinder } from "./interfaces";
 
 let container = new Container();
 
-container.bind<Bot>(TYPES.Bot).to(Bot).inSingletonScope();
+container.bind<IBot>(TYPES.Bot).to(Bot).inSingletonScope();
 container.bind<Client>(TYPES.Client).toConstantValue(new Client());
 container.bind<string>(TYPES.Token).toConstantValue(process.env.TOKEN);
 container.bind<IPingFinder>(TYPES.PingFinder).to(PingFinder).inSingletonScope();
