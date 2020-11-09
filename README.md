@@ -1,6 +1,5 @@
 # discord-bot
-A Type Script program
 
-Demo OO Principles:
+Refer my website:
 
-- Dependency Injection using Inversify
+https://www.santosh.uk/docs/designpatterns/di/dependencyInjectionTypeScript
